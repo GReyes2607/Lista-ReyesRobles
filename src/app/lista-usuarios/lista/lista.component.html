@@ -1,0 +1,15 @@
+<ul>
+    <li [ngClass]="esColor ? 'success': 'fail'" *ngFor="let usuario of usuarios; let i = index">
+
+        <div *ngIf="estamanio; else elsecondition" [ngStyle]="{'font-size': tamanio}"> {{i + 1}} - {{usuario | lowercase}} </div>
+        <ng-template #elsecondition> {{i + 1}} - {{usuario | uppercase}}</ng-template>
+
+    </li>
+    <br>
+    <button (click)="onChangeColor(esColor)" type="button">Cambiar color</button>
+    <br>
+    <button (click)="OnChangeTamanio(true)" type="button">Aumentar Tamaño</button>
+    <button (click)="OnChangeTamanio(false)" type="button">Disminuir Tamaño</button>
+    <br>
+    <button (click)="onUpperLower()">Mayusculas/Minusculas</button>
+</ul>
